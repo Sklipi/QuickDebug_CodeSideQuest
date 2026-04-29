@@ -7,7 +7,7 @@ and the AI will review it and deem if the quest was achieved or not, rewarding y
 it also got a debugging tool that also uses Gemini to review lines of code for any error and that returns the correct solution and even
 proposes better solutions
 
---------------------------------FEATURES---------------------------------------------------
+--------------------------------FEATURES-------------------------------------------------------------------------------------------
 quest generation
 xp and level up system
 login system (local storage for now) to keep track of progress
