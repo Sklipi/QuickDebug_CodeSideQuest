@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QuickDebug_ProiectTestLaborator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="binary-canvas"></canvas>
+
+    <div id="auth-container" class="terminal-window auth-box">
+        <h1>[ SYSTEM_ACCESS_REQUIRED ]</h1>
+        <div class="login-form">
+            <p>> IDENTIFY AGENT:</p>
+            <input type="text" id="username-input" class="term-input" placeholder="USERNAME..." autofocus>
+            <p>> ACCESS_CODE:</p>
+            <input type="password" id="password-input" class="term-input" placeholder="PASSWORD...">
+            <button onclick="handleLogin()">[ INITIALIZE_SESSION ]</button>
+        </div>
+    </div>
+
+    <div id="main-interface" class="terminal-window full-hub" style="display: none;">
+        <div class="header-grid">
+            <div class="user-info">
+                <h2>AGENT: <span id="user-display">---</span></h2>
+                <div class="stats-row">
+                    <span>LVL: <span id="lvl-val">1</span></span>
+                    <div class="xp-bar"><div id="xp-fill"></div></div>
+                    <span>XP: <span id="xp-val">0</span>/100</span>
+                </div>
+                <p>COMPLETED_QUESTS: <span id="quest-count">0</span></p>
+            </div>
+            <div class="leaderboard">
+                <h3>[ TOP_AGENTS ]</h3>
+                <ul id="leaderboard-list"></ul>
+            </div>
+        </div>
+
+        <div class="tool-grid">
+            <div class="tool-section">
+                <h3>[ AI_DEBUGGER ]</h3>
+                <textarea id="code-input" placeholder="PASTE_CODE_TO_ANALYZE..."></textarea>
+                <button id="debug-btn">[ RUN_ANALYSIS ]</button>
+            </div>
+
+            <div class="tool-section">
+                <h3>[ SIDE_QUESTS ]</h3>
+                <div class="quest-box">
+                    <p id="quest-text">> NO ACTIVE MISSION.</p>
+                </div>
+                <button id="gen-btn">[ GENERATE_QUEST ]</button>
+                <button id="submit-btn" style="display:none;">[ SUBMIT_SOLUTION ]</button>
+            </div>
+        </div>
+
+        <div id="result-zone" class="response-box" style="display:none;">
+            <p id="ai-response"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

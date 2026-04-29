@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
+:root { --glow: #00ff41; --bg: #050505; }
+
+body { 
+    background: var(--bg); 
+    color: var(--glow); 
+    font-family: 'Fira Code', monospace; 
+    margin: 0; 
+    overflow: hidden; 
+    text-transform: uppercase; 
+}
+
+#binary-canvas { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.2; }
+
+/* TERMINAL WINDOWS */
+.terminal-window {
+    border: 2px solid var(--glow);
+    padding: 20px;
+    background: rgba(5, 5, 5, 0.95);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.15);
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+/* LOGIN BOX */
+.auth-box { width: 420px; }
+.term-input {
+    width: 100%;
+    background: #000;
+    border: 1px solid var(--glow);
+    color: var(--glow);
+    padding: 12px;
+    margin-bottom: 15px;
+    font-family: inherit;
+    box-sizing: border-box;
+    outline: none;
+}
+.term-input:focus { border-width: 2px; box-shadow: 0 0 8px var(--glow); }
+
+/* MAIN HUB */
+.full-hub { 
+    width: 90vw; max-width: 1100px; height: 85vh; 
+    display: flex; flex-direction: column; gap: 20px; 
+    overflow-y: auto;
+}
+
+.header-grid { display: grid; grid-template-columns: 1fr 300px; gap: 20px; border-bottom: 1px solid var(--glow); padding-bottom: 15px; }
+.tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex-grow: 1; }
+
+.xp-bar { border: 1px solid var(--glow); height: 12px; flex-grow: 1; margin: 0 10px; background: #000; }
+#xp-fill { background: var(--glow); height: 100%; width: 0%; transition: width 0.4s ease-out; }
+
+textarea { 
+    width: 100%; height: 180px; background: #000; color: var(--glow); 
+    border: 1px solid var(--glow); font-family: inherit; resize: none; 
+    margin-bottom: 10px; padding: 12px; box-sizing: border-box; outline: none;
+}
+
+button { 
+    background: var(--glow); color: #000; border: none; padding: 14px; 
+    cursor: pointer; font-weight: bold; font-family: inherit; 
+    width: 100%; margin-top: 5px; transition: 0.2s; 
+}
+button:hover { background: #000; color: var(--glow); outline: 1px solid var(--glow); }
+
+.response-box { 
+    border: 1px dashed var(--glow); padding: 15px; 
+    background: rgba(0,255,65,0.03); white-space: pre-wrap; 
+    font-size: 13px; margin-top: 10px; line-height: 1.5;
+}
+
+.leaderboard ul { list-style: none; padding: 0; font-size: 13px; }
+.leaderboard li { border-bottom: 1px solid rgba(0,255,65,0.2); padding: 8px 0; display: flex; justify-content: space-between; }
+
+/* CRT Scanlines */
+body::after { 
+    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%); 
+    background-size: 100% 4px; z-index: 999; pointer-events: none; 
+}
